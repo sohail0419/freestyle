@@ -1,0 +1,7 @@
+---
+- name: job
+  hosts: all
+  become: true
+  tasks:
+  - name: job
+    copy: src=index.html dest= /home/ec2-user
