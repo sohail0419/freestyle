@@ -2,7 +2,7 @@
 - hosts: localhost
   become: true
   tasks:
-    - name: Get OS family
+    - name: Get OS family   wokr
       debug:
         msg: "{{ ansible_facts['distribution'] }} - version {{ ansible_facts['distribution_major_version'] }}"
 
