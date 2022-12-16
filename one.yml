@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Get OS family
+      debug:
+        msg: "{{ ansible_facts['distribution'] }} - version {{ ansible_facts['distribution_major_version'] }}"
+
+    - name: My conditional task
+      debug:
+        msg: "EXECUTED THIS TASK!!!"
+      when: (ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_major_version'] == "20") or (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
