@@ -1,8 +1,0 @@
----
-- name: job
-  hosts: all
-  become: true
-  tasks:
-  - name: job
-    debug:
-      msg: echo "done"
